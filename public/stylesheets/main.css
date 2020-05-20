@@ -1,0 +1,128 @@
+
+/* ===== BACKGROUNDS ===== */
+
+body {
+    padding: 7.0em 0;
+    background: rgb(247, 139, 68);
+}
+
+div.item:nth-child(2n) {
+    background:  rgb(87, 87, 87) !important;
+}
+
+.ui.top.attached.segment, .ui.main.text.container.segment, .ui.floated.segment {
+    background: rgb(77, 77, 77);
+    border: none;
+    padding: 0;
+}
+
+.ui.top.attached.segment {
+    margin-bottom: 7em;
+}
+
+.ui.main.text.container.segment {
+    margin: 0 0 1em 0;
+}
+
+#comments {
+    margin-bottom: 7em;
+}
+
+.field {
+    padding: 0 15px;
+}
+
+.footer {
+    bottom: 0;
+    width: 100%;
+    position: fixed !important;
+    border-radius: 0px !important;
+}
+
+#popupMessage {
+    margin-bottom: 15px;
+}
+
+/* ===== TEXT ===== */
+em {
+    float: right;
+}
+.date {
+    float: right;
+}
+
+.meta {
+    padding: 15px 0 15px 0;
+    color: white;
+}
+
+.content>span {
+    float: right;
+}
+
+p, .ui.huge.header, .meta>span, .content>span, .field>label, .ui.header, div.description, h1, .date {
+    color: white !important;
+}
+
+.description {
+    margin-top: 10px;
+}
+
+a.header {
+    color: rgb(247, 139, 68) !important;
+}
+.item, .ui.huge.header, .ui.header, .ui.main.text.container.center.aligned.grid {
+    padding: 15px !important;
+}
+
+.ui.small.header {
+    padding: 0 !important;
+    display: inline;
+    color: rgb(247, 139, 68) !important;
+}
+
+p, .ui.huge.header, .ui.divided.items {
+    margin: 0;
+}
+
+.ui.divided.items>h1 {
+    padding-top: 15px;
+}
+
+/* ===== IMAGES ===== */
+
+i.icon {
+	font-size: 1.0em;
+}
+
+.ui.centered.rounded.image, .ui.divided.items>.item:last-of-type>.image>img {
+    padding-bottom: 15px;
+}
+
+.ui.floated.segment {
+    margin: 0 45px;
+    position: fixed;
+}
+
+.ui.right.floated.segment {
+    right: 0;
+}
+
+.header.item>img, .ui.small.header>img, .right.menu>.item>img{
+    padding-right: 15px;
+    margin: 0;
+}
+
+/* ===== BUTTONS ===== */
+
+.ui.divided.items>a.ui.basic.orange.button {
+    margin: 0 0 15px 0;
+}
+
+.ui.form>input.ui.basic.orange.button, .ui.form>.ui.inverted.green.basic.button {
+    margin: 0 0 15px 15px;
+}
+
+#delete {
+	display: inline;
+}

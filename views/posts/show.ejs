@@ -1,0 +1,46 @@
+<%- include("../partials/header") %>
+<%- include("../partials/sider.html") %>
+
+<div class="ui main text container segment">
+	<div class="ui huge header"><%= post.title %></div>
+	<div class="ui top attached">
+		<div class="item">
+			<img class="ui centered rounded image" src="<%= post.image %>">
+			<div class="description">
+				<p><em>Posted by <%= post.author.username %></em></p>
+				<span><%= moment(post.created).fromNow() %></span>
+				<div class="ui divider"></div>
+			</div>
+			<div class="description">
+				<p><%= post.description %></p>
+				<div class="ui divider"></div>
+            </div>
+            <a class="inverted ui floated basic orange button" href="/posts">
+			<i class="left chevron icon"></i>Back to posts</a>
+			
+				<a class="ui inverted green basic button" href="/posts/<%= post._id %>/edit">Edit</a>
+				<form id="delete" action="/posts/<%= post._id %>?_method=DELETE" method="POST">
+				<button class="ui inverted red basic button">Delete</button>
+			
+			</form>
+		</div>
+	</div>
+</div>
+
+<div class="ui main text container segment" id="comments">
+	<div class="ui header">Comments<a class="inverted ui right floated basic orange button" href="/posts/<%= post._id %>/comments/new">Add new comment</a></div>
+	<% post.comments.forEach(function(comment){ %>
+		<div class="ui item divided items">
+			<div class="date"><%= moment(comment.created).fromNow() %> </div>
+			<div class="ui small header"><img width="25px" src="https://i.pinimg.com/originals/18/3a/64/183a64ed166744236a286a2e69c916bb.png"><%= comment.author.username %></div></br>
+			
+			<form id="delete-form" action="/posts/<%= post._id %>/comments/<%= comment._id %>?_method=DELETE" method="POST">
+			<button class="ui inverted basic right floated tiny red button">Delete</button></form>
+			<a class="ui inverted basic right floated tiny green button" href="/posts/<%= post._id %>/comments/<%= comment._id %>/edit">Edit</a>
+			
+			<div class="description"><%= comment.text %> </div>
+		</div>
+	<% }) %>
+</div>
+
+<%- include("../partials/footer") %>

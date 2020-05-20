@@ -1,0 +1,36 @@
+<%- include("../partials/header") %>
+<%- include("../partials/sider.html") %>
+
+<div class="ui main text container">
+	<div class="ui top attached segment">
+		<div class="ui divided items">
+			<% if(!currentUser) { %>
+				<div class="ui huge header">Posts</div>
+			<% } else { %>
+				<div class="ui huge header">Posts <a class="ui inverted right floated basic orange button" href="/posts/new">New Post</a></div>
+			<% } %>
+				<% post.slice().reverse().forEach(function(post) { %>
+				<div class="item">
+					<div class="image"><img src="<%= post.image %>"></div>
+					<div class="content">
+						<a class="header" href="/posts/<%= post._id %>"><%= post.title %></a><span><%= moment(post.created).fromNow() %></span>
+						<div class="description">
+							<% if(post.description && post.description.length > 0) { %>
+							<p><%= post.description.substring(0, 100) %>...</p>
+							<% } %>
+                        </div>
+						<div class="extra">
+							<a class="ui floated basic orange button" href="/posts/<%= post._id %>">
+								Read More
+                                <i class="right chevron icon"></i>
+							</a>
+							<p><em>Posted by <%= post.author.username %></em></p>
+						</div>
+					</div>
+				</div>
+			<% }) %>
+		</div>	
+	</div>
+</div>
+
+<%- include("../partials/footer") %>
